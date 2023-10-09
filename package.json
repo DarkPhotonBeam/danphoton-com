@@ -20,5 +20,6 @@
     "sass": "^1.64.2",
     "sharp": "^0.32.4",
     "typescript": "5.1.6"
-  }
+  },
+  "devDependencies": {}
 }

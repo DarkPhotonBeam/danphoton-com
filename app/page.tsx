@@ -1,95 +1,119 @@
 import Image from 'next/image'
 import styles from './page.module.scss'
+import Link from "next/link";
 
-export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+export interface ReleaseLink {
+    title: string;
+    url: string;
+}
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+export interface Image {
+    data: {
+        id: number;
+        attributes: {
+            name: string
+            alternativeText: any
+            caption: any
+            width: number
+            height: number
+            formats: {
+                small: ImageFormat
+                medium: ImageFormat
+                large: ImageFormat
+                thumbnail: ImageFormat
+            }
+            hash: string
+            ext: string
+            mime: string
+            size: number
+            url: string
+            previewUrl: any
+            provider: string
+            provider_metadata: any
+            createdAt: string
+            updatedAt: string
+        }
+    }
+}
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+export interface ImageFormat {
+    ext: string
+    url: string
+    hash: string
+    mime: string
+    name: string
+    path: any
+    size: number
+    width: number
+    height: number
+}
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
+export interface Track {
+    id: number;
+    title: string;
+}
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+export interface Release {
+    id: number;
+    attributes: {
+        title: string;
+        releaseDate: string;
+        cover: Image;
+        tracks: Track[];
+        links: ReleaseLink[];
+        createdAt: string;
+        updatedAt: string;
+        publishedAt: string;
+    }
+}
+
+/*
+
+"title": "Liminal",
+"releaseDate": "2023-08-08",
+"createdAt": "2023-08-08T16:49:57.832Z",
+"updatedAt": "2023-08-08T16:49:59.200Z",
+"publishedAt": "2023-08-08T16:49:59.193Z"
+ */
+
+export interface Releases {
+    data: Release[];
+    meta: {
+        pagination: {
+            page: number;
+            pageSize: number;
+            pageCount: number;
+            total: number;
+        }
+    }
+}
+
+export default async function Home() {
+    const data = await fetch('https://cms.danphoton.com/api/releases?populate=*');
+    const releases: Releases = await data.json();
+    console.log(releases);
+    const latestRelease = releases.data[0] ?? null;
+
+    if (latestRelease === null) {
+        return <main className={styles.main}>No Content Error</main>
+    }
+
+    const coverAttributes = latestRelease.attributes.cover.data.attributes;
+
+    return (
+        <main className={styles.main}>
+            <h1>&quot;{latestRelease.attributes.title}&quot; out now!</h1>
+            <Image className={styles.image} src={`https://cms.danphoton.com${coverAttributes.url}`} priority={true} alt={"Cover"} width={coverAttributes.width} height={coverAttributes.height}></Image>
+            <ul>
+                {
+                    latestRelease.attributes?.links?.map((link, i) => (
+                        <li key={i}>
+                            <Link href={link.url}>{link.title}</Link>
+                        </li>
+                    ))
+                }
+            </ul>
+        </main>
+    )
 }
