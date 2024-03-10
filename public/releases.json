@@ -1,0 +1,77 @@
+[
+  {
+    "title": "Lucid",
+    "key": "Lucid",
+    "releaseDate": "03-12-2023",
+    "links": [
+      {
+        "platform": "Spotify",
+        "url": "https://open.spotify.com/album/6CyTfnqrjezrrRJyNlhZSN?si=_ItW6xu8TBygr_ILgJPOEg"
+      },
+      {
+        "platform": "AppleMusic",
+        "url": "https://music.apple.com/us/album/lucid-single/1719554358?uo=4&app=music&at=1001lry3&ct=dashboard"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Lucid",
+        "key": "Lucid"
+      }
+    ]
+  },
+  {
+    "title": "Road",
+    "key": "Road",
+    "releaseDate": "13-10-2023",
+    "links": [
+      {
+        "platform": "Spotify",
+        "url": "https://open.spotify.com/album/6CyTfnqrjezrrRJyNlhZSN?si=_ItW6xu8TBygr_ILgJPOEg"
+      },
+      {
+        "platform": "AppleMusic",
+        "url": "https://music.apple.com/us/album/lucid-single/1719554358?uo=4&app=music&at=1001lry3&ct=dashboard"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Road",
+        "key": "Road"
+      }
+    ]
+  },
+  {
+    "title": "Liminal",
+    "key": "Liminal",
+    "releaseDate": "13-10-2023",
+    "links": [
+      {
+        "platform": "Spotify",
+        "url": "https://open.spotify.com/album/6CyTfnqrjezrrRJyNlhZSN?si=_ItW6xu8TBygr_ILgJPOEg"
+      },
+      {
+        "platform": "AppleMusic",
+        "url": "https://music.apple.com/us/album/lucid-single/1719554358?uo=4&app=music&at=1001lry3&ct=dashboard"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Liminal",
+        "key": "Liminal"
+      },
+      {
+        "title": "Spaces",
+        "key": "Spaces"
+      },
+      {
+        "title": "Shiver",
+        "key": "Shiver"
+      },
+      {
+        "title": "High Note",
+        "key": "HighNote"
+      }
+    ]
+  }
+]

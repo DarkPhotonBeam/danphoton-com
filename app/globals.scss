@@ -1,0 +1,48 @@
+:root {
+  --c-bg-main: #000;
+  --c-bg-sec: #1c1c1c;
+  --c-bg-tri: #2a2a2a;
+  --c-bg-hov-main: #592674;
+  --c-text: #b9b9b9;
+  --c-link: #8b8b8b;
+  --c-link-hov: #8f26ab;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  transition: color 150ms ease-in-out, background-color 150ms ease-in-out;
+}
+
+body {
+
+  background: var(--c-bg-main);
+  color: var(--c-text);
+}
+
+a {
+  color: var(--c-link);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--c-link-hov);
+  }
+}
+
+input[type="range"] {
+  accent-color: var(--c-link-hov);
+}
+
+h1 {
+  margin-bottom: 2rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2rem 2rem 8rem 2rem;
+  min-height: 100vh;
+}

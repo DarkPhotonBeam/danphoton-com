@@ -1,0 +1,57 @@
+
+.main {
+
+  margin-bottom: 2rem;
+}
+
+.title {
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.left {
+  height: 400px;
+  width: 400px;
+}
+
+.right {
+  width: 400px;
+  max-height: 400px;
+}
+
+.songs {
+  list-style: none;
+}
+
+.song {
+  width: 100%;
+  background: var(--c-bg-sec);
+  padding: .5rem 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+
+  &:nth-child(odd) {
+    background: var(--c-bg-tri);
+  }
+
+  &:hover {
+    background-color: var(--c-bg-hov-main);
+  }
+}
+
+.active {
+  background: var(--c-bg-hov-main) !important;
+}
+
+.links {
+
+}
