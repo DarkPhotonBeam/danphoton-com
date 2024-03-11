@@ -1,6 +1,7 @@
 "use client";
 import css from './Release.module.scss';
 import Image from "next/image";
+import Link from "next/link";
 import releases from '@/public/releases.json';
 import {useState} from "react";
 import {useRecoilState} from "recoil";
@@ -13,6 +14,7 @@ import {
     mmPlayNextState,
     mmQueueState
 } from "@/app/recoilContextProvider";
+import Logo from "@/app/components/Logo/Logo";
 
 export interface ISong {
     title: string;
@@ -46,6 +48,13 @@ export default function Release({release, subtitle, albumIndex} : {release: IRel
                 <div className={css.right}>
                     <Songs albumIndex={albumIndex} songs={release.songs} />
                 </div>
+            </div>
+            <div className={css.links}>
+                {
+                    release.links.map((link, i) => (
+                        <Link target={"_blank"} key={i} href={link.url}><Logo platform={link.platform} /></Link>
+                    ))
+                }
             </div>
         </div>
     );

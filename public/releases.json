@@ -11,6 +11,10 @@
       {
         "platform": "AppleMusic",
         "url": "https://music.apple.com/us/album/lucid-single/1719554358?uo=4&app=music&at=1001lry3&ct=dashboard"
+      },
+      {
+        "platform": "Tidal",
+        "url": "https://tidal.com/browse/album/332800900"
       }
     ],
     "songs": [

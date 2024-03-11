@@ -25,6 +25,8 @@ export default function MediaControls() {
     const [currentTime, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState(0);
     const range = useRef<HTMLInputElement>(null);
+    const [volume, setVolume] = useState(1);
+    const [ready, setReady] = useState(false);
 
 
     const playNext = () => {
@@ -46,12 +48,16 @@ export default function MediaControls() {
     };
 
     useEffect(() => {
+        setReady(false);
+    }, [currentIndex, currentAlbumIndex]);
+
+    useEffect(() => {
         if (audio == null) return;
         //setReady(false);
         if (range.current) range.current.value = "0";
         audio.onpause = () => setIsPlaying(false);
         audio.onplay = () => setIsPlaying(true);
-        //audio.onloadedmetadata = () => setReady(true);
+        audio.onloadedmetadata = () => setReady(true);
         audio.ontimeupdate = () => {
             if (range.current) range.current.value = "" + (audio.currentTime / audio.duration);
             setCurrentTime(audio.currentTime);
@@ -97,17 +103,30 @@ export default function MediaControls() {
         audio.play().then();
     };
 
-    if (audio == null) return "";
+    const changeVolume = (e: ChangeEvent<HTMLInputElement>) => {
+        const val = parseFloat(e.target.value);
+        setVolume(parseFloat(e.target.value));
+        if (audio === null) return;
+        audio.volume = val;
+    };
+
+    if (audio == null || !ready) return "";
 
     return (
         <div className={css.main}>
             <div className={css.upper}>
+                <div className={css.titleWrapper}>
+                    {releases[currentAlbumIndex].songs[currentIndex].title}
+                </div>
                 <div className={css.controls}>
                     <FaBackwardStep onClick={playPrev} />
                     {
                         !isPlaying ? <FaPlay onClick={() => audio.play()} /> : <FaPause onClick={() => audio.pause()} />
                     }
                     <FaForwardStep onClick={playNext} />
+                </div>
+                <div className={css.volumeWrapper}>
+                    <input title={"Volume"} max={1} min={0} step={0.0001} value={volume} type={'range'} onChange={changeVolume} className={css.volume} />
                 </div>
             </div>
             <div className={css.lower}>
