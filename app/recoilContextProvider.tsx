@@ -22,6 +22,26 @@ export const mmCurrentIndexState = atom<number>({
     default: 0,
 });
 
+export const visAudioCtxState = atom<AudioContext | null>({
+    key: "visAudioCtx",
+    default: null,
+});
+
+export const visAudioSrcState = atom<MediaElementAudioSourceNode | null>({
+    key: "visAudioSrc",
+    default: null
+});
+
+export const visGainNodeState = atom<GainNode | null>({
+    key: "visGainNode",
+    default: null,
+});
+
+export const visAnalyzerState = atom<AnalyserNode | null>({
+    key: "visAnalyzer",
+    default: null
+});
+
 export const mmCurrentElapsedState = atom<number>({
     key: "mmCurrentElapsed",
     default: 0,

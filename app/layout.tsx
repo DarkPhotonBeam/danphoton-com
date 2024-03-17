@@ -3,6 +3,7 @@ import {Inter} from "next/font/google";
 import "./globals.scss";
 import RecoilContextProvider from "@/app/recoilContextProvider";
 import MediaControls from "@/app/components/MediaControls/MediaControls";
+import Visualizer from "@/app/components/Visualizer/Visualizer";
 
 const inter = Inter({subsets: ["latin"]});
 
@@ -22,6 +23,7 @@ export default function RootLayout({
                 <RecoilContextProvider>
                     {children}
                     <MediaControls />
+                    <Visualizer />
                 </RecoilContextProvider>
             </body>
         </html>
