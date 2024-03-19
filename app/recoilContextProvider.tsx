@@ -52,6 +52,11 @@ export const mmAudioElState = atom<HTMLAudioElement | null>({
     default: null,
 });
 
+export const visualizerOverlayActiveState = atom<boolean>({
+    key: "visualizerOverlayActive",
+    default: true,
+});
+
 export default function RecoilContextProvider({ children }: { children: React.ReactNode }) {
     return <RecoilRoot>{children}</RecoilRoot>;
 }

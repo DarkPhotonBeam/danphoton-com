@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Loop through all .wav files in the current directory
+for input_file in *.wav; do
+    # Extract the base filename without extension
+    base_name="${input_file%.wav}"
+    # Convert .wav to .mp3 with specified bitrate
+    ffmpeg -i "$input_file" -vn -ar 44100 -ac 2 -b:a 320k "${base_name}.mp3"
+done
+
+echo "Conversion complete!"

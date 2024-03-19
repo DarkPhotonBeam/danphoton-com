@@ -31,11 +31,15 @@
     "links": [
       {
         "platform": "Spotify",
-        "url": "https://open.spotify.com/album/6CyTfnqrjezrrRJyNlhZSN?si=_ItW6xu8TBygr_ILgJPOEg"
+        "url": "https://open.spotify.com/album/7yHgpn0jQkwsUsANawHfzG"
       },
       {
         "platform": "AppleMusic",
-        "url": "https://music.apple.com/us/album/lucid-single/1719554358?uo=4&app=music&at=1001lry3&ct=dashboard"
+        "url": "https://music.apple.com/us/album/road-single/1711735086?uo=4&app=music&at=1001lry3&ct=dashboard"
+      },
+      {
+        "platform": "Tidal",
+        "url": "https://tidal.com/browse/album/321536735"
       }
     ],
     "songs": [
@@ -52,11 +56,15 @@
     "links": [
       {
         "platform": "Spotify",
-        "url": "https://open.spotify.com/album/6CyTfnqrjezrrRJyNlhZSN?si=_ItW6xu8TBygr_ILgJPOEg"
+        "url": "https://open.spotify.com/album/122xNgVeqSS0Tu35iOiQa6"
       },
       {
         "platform": "AppleMusic",
-        "url": "https://music.apple.com/us/album/lucid-single/1719554358?uo=4&app=music&at=1001lry3&ct=dashboard"
+        "url": "https://music.apple.com/us/album/liminal-ep/1701420135?uo=4&app=music&at=1001lry3&ct=dashboard"
+      },
+      {
+        "platform": "Tidal",
+        "url": "https://tidal.com/browse/album/309516828"
       }
     ],
     "songs": [
@@ -75,6 +83,312 @@
       {
         "title": "High Note",
         "key": "HighNote"
+      }
+    ]
+  },
+  {
+    "title": "Jazz?",
+    "key": "Jazz",
+    "releaseDate": "11-01-2023",
+    "links": [
+      {
+        "platform": "Spotify",
+        "url": "https://open.spotify.com/album/4aB7tWleoCcawRpoXXHpHM"
+      },
+      {
+        "platform": "AppleMusic",
+        "url": "https://music.apple.com/us/album/jazz-ep/1665116331?uo=4&app=music&at=1001lry3&ct=dashboard"
+      },
+      {
+        "platform": "Tidal",
+        "url": "https://tidal.com/browse/album/270995400"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Encounters",
+        "key": "Encounters"
+      },
+      {
+        "title": "Siete",
+        "key": "Siete"
+      },
+      {
+        "title": "Montage",
+        "key": "Montage"
+      },
+      {
+        "title": "Duality",
+        "key": "Duality"
+      }
+    ]
+  },
+  {
+    "title": "Clouds",
+    "key": "Clouds",
+    "releaseDate": "10-01-2023",
+    "links": [
+      {
+        "platform": "Spotify",
+        "url": "https://open.spotify.com/album/5v6QUuO9THnv8jOKxHdjLQ"
+      },
+      {
+        "platform": "AppleMusic",
+        "url": "https://music.apple.com/us/album/clouds-single/1664807192?uo=4&app=music&at=1001lry3&ct=dashboard"
+      },
+      {
+        "platform": "Tidal",
+        "url": "https://tidal.com/browse/album/270821736"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Clouds",
+        "key": "Clouds"
+      },
+      {
+        "title": "Saturn",
+        "key": "Saturn"
+      },
+      {
+        "title": "Jupiter",
+        "key": "Jupiter"
+      }
+    ]
+  },
+  {
+    "title": "Falling Down",
+    "key": "FallingDown",
+    "releaseDate": "18-09-2022",
+    "links": [
+      {
+        "platform": "Spotify",
+        "url": "https://open.spotify.com/album/74JtcPvPoV38x1LGzs3dTd"
+      },
+      {
+        "platform": "AppleMusic",
+        "url": "https://music.apple.com/us/album/falling-down-single/1645732009?uo=4&app=music&at=1001lry3&ct=dashboard"
+      },
+      {
+        "platform": "Tidal",
+        "url": "https://tidal.com/browse/album/249021653"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Falling Down",
+        "key": "FallingDown"
+      }
+    ]
+  },
+  {
+    "title": "Why They Peeling Him",
+    "key": "WhyTheyPeelingHim",
+    "releaseDate": "28-04-2022",
+    "links": [
+      {
+        "platform": "Spotify",
+        "url": "https://open.spotify.com/album/1aG4FbbddZk7WUgyedMlpy"
+      },
+      {
+        "platform": "AppleMusic",
+        "url": "https://music.apple.com/us/album/why-they-peeling-him-feat-thecodec-single/1621949411?uo=4&app=music&at=1001lry3&ct=dashboard"
+      },
+      {
+        "platform": "Tidal",
+        "url": "https://tidal.com/browse/album/227092223"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Why They Peeling Him (feat. TheCodec)",
+        "key": "WhyTheyPeelingHim"
+      }
+    ]
+  },
+  {
+    "title": "Big Crunch",
+    "key": "BigCrunch",
+    "releaseDate": "26-04-2022",
+    "links": [
+      {
+        "platform": "Spotify",
+        "url": "https://open.spotify.com/album/3OScaPLxcEU3de8EZtMK5L"
+      },
+      {
+        "platform": "AppleMusic",
+        "url": "https://music.apple.com/us/album/big-crunch-single/1620989803?uo=4&app=music&at=1001lry3&ct=dashboard"
+      },
+      {
+        "platform": "Tidal",
+        "url": "https://tidal.com/browse/album/226292838"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Big Crunch",
+        "key": "BigCrunch"
+      }
+    ]
+  },
+  {
+    "title": "196",
+    "key": "196",
+    "releaseDate": "26-04-2022",
+    "links": [
+      {
+        "platform": "Spotify",
+        "url": "https://open.spotify.com/album/4eNGm7lkxtkV5LUY3IQ364"
+      },
+      {
+        "platform": "Tidal",
+        "url": "https://tidal.com/browse/album/226769974"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Intro",
+        "key": "Intro"
+      },
+      {
+        "title": "Coca Cola Espuma",
+        "key": "CocaColaEspuma"
+      },
+      {
+        "title": "Can You Say Big Chungus",
+        "key": "CanYouSayBigChungus"
+      },
+      {
+        "title": "Among Us Breastfeeding",
+        "key": "AmongUsBreastfeeding"
+      },
+      {
+        "title": "Perchance",
+        "key": "Perchance"
+      },
+      {
+        "title": "I Like Paul Dano",
+        "key": "ILikePaulDano"
+      },
+      {
+        "title": "Kraft Punk (What Should We Do Now)",
+        "key": "KraftPunk"
+      },
+      {
+        "title": "Mozarz (Turkish March)",
+        "key": "Mozarz"
+      },
+      {
+        "title": "Local Trout Population",
+        "key": "LocalTroutPopulation"
+      }
+    ]
+  },
+  {
+    "title": "CBD Corndog",
+    "key": "CBDCorndog",
+    "releaseDate": "25-04-2022",
+    "links": [
+      {
+        "platform": "Spotify",
+        "url": "https://open.spotify.com/album/57XNchlcCEaUKyW3Z0NuMT"
+      },
+      {
+        "platform": "AppleMusic",
+        "url": "https://music.apple.com/us/album/cbd-corndog-single/1620914270?uo=4&app=music&at=1001lry3&ct=dashboard"
+      },
+      {
+        "platform": "Tidal",
+        "url": "https://tidal.com/browse/album/226219479"
+      }
+    ],
+    "songs": [
+      {
+        "title": "CBD Corndog",
+        "key": "CBDCorndog"
+      }
+    ]
+  },
+  {
+    "title": "Mad Tweak Session",
+    "key": "MadTweakSession",
+    "releaseDate": "29-01-2022",
+    "links": [
+      {
+        "platform": "Spotify",
+        "url": "https://open.spotify.com/album/44jvzagjSSpHFOi5mx2FoV"
+      },
+      {
+        "platform": "AppleMusic",
+        "url": "https://music.apple.com/us/album/mad-tweak-session-single/1608708125?uo=4&app=music&at=1001lry3&ct=dashboard"
+      },
+      {
+        "platform": "Tidal",
+        "url": "https://tidal.com/browse/album/214903137"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Pill Me (Bacta Bitch)",
+        "key": "PillMe"
+      },
+      {
+        "title": "Bad Piggies Theme",
+        "key": "BadPiggiesTheme"
+      },
+      {
+        "title": "Balls In Your Chungus",
+        "key": "BallsInYourChungus"
+      }
+    ]
+  },
+  {
+    "title": "Glonchern",
+    "key": "Glonchern",
+    "releaseDate": "17-12-2021",
+    "links": [
+      {
+        "platform": "Spotify",
+        "url": "https://open.spotify.com/album/40gxxI0qeOsL1yQxvwmhud"
+      },
+      {
+        "platform": "AppleMusic",
+        "url": "https://music.apple.com/us/album/glonchern-single/1601110272?uo=4&app=music&at=1001lry3&ct=dashboard"
+      },
+      {
+        "platform": "Tidal",
+        "url": "https://tidal.com/browse/album/209645804"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Glonchern",
+        "key": "Glonchern"
+      }
+    ]
+  },
+  {
+    "title": "Good Morning Good Night",
+    "key": "GoodMorningGoodNight",
+    "releaseDate": "25-04-2022",
+    "links": [
+      {
+        "platform": "Spotify",
+        "url": "https://open.spotify.com/album/6vHhs09C86nFFteNHHx4zv"
+      },
+      {
+        "platform": "AppleMusic",
+        "url": "https://music.apple.com/us/album/good-morning-good-night-single/1592851908?uo=4&app=music&at=1001lry3&ct=dashboard"
+      },
+      {
+        "platform": "Tidal",
+        "url": "https://tidal.com/browse/album/203077194"
+      }
+    ],
+    "songs": [
+      {
+        "title": "Good Morning Good Night",
+        "key": "GoodMorningGoodNight"
       }
     ]
   }

@@ -6,51 +6,74 @@ import {
     visAnalyzerState,
     visAudioCtxState,
     visAudioSrcState,
-    visGainNodeState
+    visGainNodeState, visualizerOverlayActiveState,
 } from "@/app/recoilContextProvider";
-import {useCallback, useEffect, useRef} from "react";
+import {useCallback, useEffect, useRef, useState} from "react";
+import {deltaToBpm, drawVisualizer, oldDraw} from "@/app/lib/visualizerHelpers";
+import Trigger from "@/app/lib/Trigger";
+import TimeBufferedAvg from "@/app/lib/TimeBufferedAvg";
 
 export default function Visualizer() {
     const audio = useRecoilValue(mmAudioElState);
+    const visualizerOverlayActive = useRecoilValue(visualizerOverlayActiveState);
     const [audioCtx, setAudioCtx] = useRecoilState(visAudioCtxState);
     const [audioSrc, setAudioSrc] = useRecoilState(visAudioSrcState);
     const [analyzer, setAnalyzer] = useRecoilState(visAnalyzerState);
     const [gainNode, setGainNode] = useRecoilState(visGainNodeState);
 
+
     const canvasRef = useRef<HTMLCanvasElement>(null);
+    const trigger1 = useRef<Trigger>(new Trigger(6, 1000));
+    const last = useRef<number>(-1);
+    const cnt1 = useRef<number>(0);
+    const deltaAvg = useRef<TimeBufferedAvg>(new TimeBufferedAvg(10_000));
+
+    const [bpm, setBpm] = useState(120);
 
     const frame = useRef(0);
 
-    const animate = useCallback(() => {
+    const animate = useCallback((time: number) => {
+        if (last.current === -1) last.current = time;
+
+
         if (canvasRef.current === null) return;
         const canvas = canvasRef.current;
-
         const ctx = canvas.getContext("2d");
         if (ctx === null) return;
-        //console.log(analyzer);
+
         if (analyzer !== null) {
             const arr = new Uint8Array(analyzer?.fftSize);
             analyzer.getByteFrequencyData(arr);
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = "red";
-            //console.log(arr[100]);
-            //ctx.fillRect(0, 0, canvas.width, canvas.height * (arr[100]/255));
-            for (let i = 0; i < canvas.width/2; i++) {
-                const l = Math.floor((i / (canvas.width/2)) * arr.length*0.25);
-                const h = arr[l]/255 * canvas.height;
-                const mult = 0.3;
-                ctx.fillStyle = `rgb(${arr[l]*mult}, ${30*mult}, ${i/canvas.width/2*255*mult})`;
-                ctx.fillRect(i, canvas.height/2-h/2, 1, h);
-                ctx.fillRect(canvas.width-i-1, canvas.height/2-h/2, 1, h);
+
+            if (trigger1.current.process(arr)) {
+                const deltaTime = time - last.current;
+                last.current = time;
+                deltaAvg.current.add(deltaTime);
+                cnt1.current = 1.0;
+                console.log("Trigger");
+                setBpm(deltaToBpm(deltaAvg.current.avg));
             }
+
+            canvas.style.transform = `scale(${1+cnt1.current*0.6})`;
+            const flashmax = visualizerOverlayActive ? 20 : 150;
+            //console.log(bpm);
+
+            const r = flashmax * cnt1.current;
+            const g = flashmax * 0.5 * cnt1.current;
+            const b = flashmax * cnt1.current;
+
+            ctx.fillStyle = `rgb(${r}, ${g}, ${b})`;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            drawVisualizer(ctx, arr, bpm);
+
+            cnt1.current *= 0.9;
         }
 
-        //ctx.fillStyle = "red";
-        //ctx.fillRect(0, 0, 20, 20);
-        //ctx.fillRect(canvas.width, 0, -20, 20);
 
         frame.current = requestAnimationFrame(animate);
-    }, [analyzer]);
+    }, [analyzer, bpm, visualizerOverlayActive]);
 
     const resizeHandler = () => {
         if (canvasRef.current === null) return;
@@ -87,6 +110,18 @@ export default function Visualizer() {
     }, [animate, audio, canvasRef]);
 
     return (
-        <canvas className={css.canvas} ref={canvasRef}></canvas>
+        <div className={css.wrapper}>
+            <canvas className={css.canvas} ref={canvasRef}></canvas>
+            {
+                visualizerOverlayActive ? <div className={css.overlay}></div> : ''
+            }
+            {
+                process.env.NODE_ENV !== 'production' ? (
+                    <div className={css.debug}>
+                        <span>{bpm} bpm</span>
+                    </div>
+                ) : ''
+            }
+        </div>
     );
 }

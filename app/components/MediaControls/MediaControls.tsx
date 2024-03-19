@@ -2,16 +2,17 @@
 
 import css from './MediaControls.module.scss';
 import {useRecoilState, useRecoilValue} from "recoil";
-import { FaPlay, FaBackwardStep, FaForwardStep, FaPause } from "react-icons/fa6";
+import { FaPlay, FaBackwardStep, FaForwardStep, FaPause, FaVideo, FaVideoSlash } from "react-icons/fa6";
 import {
     mmAudioElState,
     mmCurrentAlbumIndexState, mmCurrentElapsedState,
     mmCurrentIndexState,
     mmPlayNextState,
-    mmQueueState, visGainNodeState
+    mmQueueState, visGainNodeState, visualizerOverlayActiveState
 } from "@/app/recoilContextProvider";
 import {ChangeEvent, FormEvent, useEffect, useRef, useState} from "react";
 import releases from '@/public/releases.json';
+import Link from "next/link";
 
 export default function MediaControls() {
     const [queue, setQueue] = useRecoilState(mmQueueState);
@@ -20,6 +21,7 @@ export default function MediaControls() {
     const [currentIndex, setCurrentIndex] = useRecoilState(mmCurrentIndexState);
     const [currentAlbumIndex, setCurrentAlbumIndex] = useRecoilState(mmCurrentAlbumIndexState);
     const [currentElapsed, setCurrentElapsed] = useRecoilState(mmCurrentElapsedState);
+    const [visuOverlayActive, setVisuOverlayActive] = useRecoilState(visualizerOverlayActiveState);
     const gainNode = useRecoilValue(visGainNodeState);
 
     const [isPlaying, setIsPlaying] = useState(false);
@@ -127,6 +129,9 @@ export default function MediaControls() {
                         !isPlaying ? <FaPlay onClick={() => audio.play()} /> : <FaPause onClick={() => audio.pause()} />
                     }
                     <FaForwardStep onClick={playNext} />
+                    {
+                        visuOverlayActive ? <FaVideo onClick={() => setVisuOverlayActive(false)} /> : <FaVideoSlash onClick={() => setVisuOverlayActive(true)} />
+                    }
                 </div>
                 <div className={css.volumeWrapper}>
                     <input title={"Volume"} max={1} min={0} step={0.0001} value={volume} type={'range'} onChange={changeVolume} className={css.volume} />
