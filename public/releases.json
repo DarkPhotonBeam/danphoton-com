@@ -1,5 +1,23 @@
 [
   {
+    "title": "RGB",
+    "key": "RGB",
+    "releaseDate": "19-06-2024",
+    "links": [
+
+    ],
+    "songs": [
+      {
+        "title": "RGB",
+        "key": "RGB"
+      },
+      {
+        "title": "whoami",
+        "key": "whoami"
+      }
+    ]
+  },
+  {
     "title": "Lucid",
     "key": "Lucid",
     "releaseDate": "03-12-2023",
@@ -91,18 +109,7 @@
     "key": "Jazz",
     "releaseDate": "11-01-2023",
     "links": [
-      {
-        "platform": "Spotify",
-        "url": "https://open.spotify.com/album/4aB7tWleoCcawRpoXXHpHM"
-      },
-      {
-        "platform": "AppleMusic",
-        "url": "https://music.apple.com/us/album/jazz-ep/1665116331?uo=4&app=music&at=1001lry3&ct=dashboard"
-      },
-      {
-        "platform": "Tidal",
-        "url": "https://tidal.com/browse/album/270995400"
-      }
+
     ],
     "songs": [
       {
@@ -211,18 +218,7 @@
     "key": "BigCrunch",
     "releaseDate": "26-04-2022",
     "links": [
-      {
-        "platform": "Spotify",
-        "url": "https://open.spotify.com/album/3OScaPLxcEU3de8EZtMK5L"
-      },
-      {
-        "platform": "AppleMusic",
-        "url": "https://music.apple.com/us/album/big-crunch-single/1620989803?uo=4&app=music&at=1001lry3&ct=dashboard"
-      },
-      {
-        "platform": "Tidal",
-        "url": "https://tidal.com/browse/album/226292838"
-      }
+
     ],
     "songs": [
       {
@@ -236,14 +232,7 @@
     "key": "196",
     "releaseDate": "26-04-2022",
     "links": [
-      {
-        "platform": "Spotify",
-        "url": "https://open.spotify.com/album/4eNGm7lkxtkV5LUY3IQ364"
-      },
-      {
-        "platform": "Tidal",
-        "url": "https://tidal.com/browse/album/226769974"
-      }
+
     ],
     "songs": [
       {
@@ -314,18 +303,7 @@
     "key": "MadTweakSession",
     "releaseDate": "29-01-2022",
     "links": [
-      {
-        "platform": "Spotify",
-        "url": "https://open.spotify.com/album/44jvzagjSSpHFOi5mx2FoV"
-      },
-      {
-        "platform": "AppleMusic",
-        "url": "https://music.apple.com/us/album/mad-tweak-session-single/1608708125?uo=4&app=music&at=1001lry3&ct=dashboard"
-      },
-      {
-        "platform": "Tidal",
-        "url": "https://tidal.com/browse/album/214903137"
-      }
+
     ],
     "songs": [
       {
